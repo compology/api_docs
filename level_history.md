@@ -5,13 +5,13 @@
 
 ## Overview
 
-Base URL: `https://api.compology.com`
+Base URL: `https://api.compology.com/v1/`
 
 ## API Reference
 
 ### REST Resource: Level History
 
-#### GET `/v1/reports/level_history.csv`
+#### GET `/reports/level_history.csv`
 
 The level history report contains a single record for each level reading
 performed by a Compology sensor. In addition to level information, the report
@@ -31,8 +31,6 @@ Successful responses will always have a Content-Type of text/csv; charset=utf-8.
 
 #### Response fields
 
-**Name Type Description Example**
-
 | Name | Type | Description | Example |
 |------|------|-------------|---------|
 | organization_id         | string | Your organization’s identifier. This will match the organization_id value specified in the request. | compologyinc |
@@ -51,12 +49,17 @@ Successful responses will always have a Content-Type of text/csv; charset=utf-8.
 | latitude                | float | If present, the latitude of the container at this event in decimal degrees. | 37.771777 |
 | longitude               | float | If present, the longitude of the container at this event in decimal degrees. | -122.407368 |
 | position_accuracy       | float | If present, the expected margin of error of the latitude/longitude values in meters. | 9.3 |
-| image_url               | string | If present, the url of the image taken at this event. | https://images.compology.co m/1/raw_device_data/3a22fd3 f-e793-4cf7-bcf9-be8e789d8a8b |
+| image_url               | string | If present, the url of the image taken at this event. | https://images.compology.com/1/raw_device_data/3a22fd3f-e793-4cf7-bcf9-be8e789d8a8b |
 
 
 #### Example
 
-$ curl -o level_history.csv https://api.compology.com/v1/reports/level_history.csv?api_key=SECRET_API_KEY&organization_id=ORG_ID&start_at= 2017-11-01T00:00:00&end_at=2017-11-30T00:00:00
+```bash
+export BASE_URL=https://api.compology.com/v1/
+export API_KEY=<your api key>
+export ORG_ID=<your organization id>
+curl -o level_history.csv $BASE_URL/reports/level_history.csv?api_key=$API_KEY&organization_id=$ORG_ID&start_at=2017-11-01T00:00:00&end_at=2017-11-30T00:00:00
+```
 
 ## Authentication
 
