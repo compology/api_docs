@@ -24,7 +24,7 @@ Base URL: `https://containers-api.compology.com/v1/`
 ### REST Resource: Customers
 
 #### GET `/customers/<compology customer id>/containers`
-Return a list of containers located at the specified customer's location(s), ordered by `?`.
+Return a list of containers located at the specified customer's location(s).
 The list is paginated, with 100 records per page.
 
 #### Parameters
