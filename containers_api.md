@@ -56,6 +56,7 @@ curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" ${BASE}/c
     "location":{
       "id":null,
       "description":null,
+      "externalId":null,
       "street":null,
       "city":null,
       "state":null,
@@ -106,6 +107,7 @@ curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" ${BASE}/c
     "location":{
       "id":"96ece541-dd64-437f-a869-15e205e81111",
       "description":"Sanford Shop",
+      "externalId":"SPRING001",
       "street":"123 Fake St",
       "city":"Springfield",
       "state":null,
