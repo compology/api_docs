@@ -1,0 +1,35 @@
+
+FORMAT: v1
+
+# Customers [/customers]
+
+## Retrieve all customers [GET]
+
++ Parameters
+  + page (number) - page requested
+
++ Response 200 (application/json)
+
+  + Attributes (array[Customer])
+
+
+# Data Structures
+
+## Customer (object)
+
++ id: b80134e0-1315-4496-bb6c-7c41705b984e (uuid, required)
++ externalCrmId: 'foo' (string)
++ organizationId: 'SomeOrgID' (string, required)
++ name: 'A_0dc9d8e9-72a7-4fc2-a914-f652c457607a' (string, required)
++ createdAt: '2019-02-27T20:36:40.873Z' (string)
++ updatedAt: '2019-02-27T20:36:40.873Z' (string)
++ billingStreet: null (string)
++ billingCity: null (string)
++ billingCountry: null (string)
++ billingState: null (string)
++ billingZip: null (string)
++ contactFullName: null (string)
++ contactPhone: null (string)
++ email: foo@example.com (string)
++ isActive: true (boolean)
+
