@@ -63,7 +63,7 @@ curl -v -H "Authorization: Bearer $TOKEN" "https://customers-api.compology.com/v
 < Content-Type: application/json; charset=utf-8
 < Content-Length: 366
 ...
-{"id":"f5e77ca3-357a-4100-9796-5c3ae850a837","externalCrmId":"kljlkj","organizationId":"compologyinc","name":"Aplace in Santa Cruz","createdAt":"2018-07-24T21:40:03.482Z","updatedAt":"2018-07-24T21:40:03.482Z","billingStreet":"","billingCity":"","billingState":"","billingZip":"","contactFullName":"","contactPhone":"","email":"","isActive":true,"billingCountry":""}
+{"id":"f5e77ca3-357a-4100-9796-5c3ae850a837","externalCrmId":"kljlkj","organizationId":"compologyinc","name":"Aplace in Santa Cruz","createdAt":"2018-07-24T21:40:03.482Z","updatedAt":"2018-07-24T21:40:03.482Z","billingStreet":"","billingCity":"","billingState":"","billingZip":"","contactFullName":"","contactPhone":"","email":"","isActive":true,"billingCountry":"","associatedUserEmail":"foo@example.com"}
 ```
 
 #### POST `/customers`
@@ -121,14 +121,14 @@ This endpoint can also be used to "undelete" a previously-deleted customer.
 
 #### Request example
 ```
-curl -v -X PUT -H "Authorization: Bearer $TOKEN" "https://customers-api.compology.com/v1/customers/" -d externalCustomerId=ABC098 -d name=foo -d "contactFullName=John W. Doe"
+curl -v -X PUT -H "Authorization: Bearer $TOKEN" "https://customers-api.compology.com/v1/customers/" -d externalCustomerId=ABC098 -d name=foo -d "contactFullName=John W. Doe" -d associatedUserEmail=foo@example.com
 ```
 
 #### Response example
 ```
 < HTTP/1.1 200 OK
 ...
-{"id":"fbb31d2e-ccc2-40c0-a314-1ca113a29ec1","externalCrmId":"ABC098","organizationId":"compologyinc","name":"foo","createdAt":"2018-10-18T17:51:13.481Z","updatedAt":"2018-10-18T17:57:36.860Z","contactFullName":"John W. Doe","isActive":true,"billingCountry":null}
+{"id":"fbb31d2e-ccc2-40c0-a314-1ca113a29ec1","externalCrmId":"ABC098","organizationId":"compologyinc","name":"foo","createdAt":"2018-10-18T17:51:13.481Z","updatedAt":"2018-10-18T17:57:36.860Z","contactFullName":"John W. Doe","isActive":true,"billingCountry":null,"associatedUserEmail":"foo@example.com"}
 ```
 
 #### PUT `/customers/e/<external customer id>`
@@ -154,7 +154,7 @@ curl -v -X PUT -H "Authorization: Bearer $TOKEN" "https://customers-api.compolog
 ```
 < HTTP/1.1 200 OK
 ...
-{"id":"fbb31d2e-ccc2-40c0-a314-1ca113a29ec1","externalCrmId":"ABC098","organizationId":"compologyinc","name":"foo","createdAt":"2018-10-18T17:51:13.481Z","updatedAt":"2018-10-18T17:55:04.466Z","contactFullName":"John X. Doe","isActive":true,"billingCountry":null}
+{"id":"fbb31d2e-ccc2-40c0-a314-1ca113a29ec1","externalCrmId":"ABC098","organizationId":"compologyinc","name":"foo","createdAt":"2018-10-18T17:51:13.481Z","updatedAt":"2018-10-18T17:55:04.466Z","contactFullName":"John X. Doe","isActive":true,"billingCountry":null,"associatedUserEmail":null}
 ```
 
 
