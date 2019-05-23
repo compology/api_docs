@@ -184,9 +184,97 @@ The list is paginated, with 100 records per page.
 #### Parameters
  * `page` optional
 
+#### Request example
+```
+curl -v -H "Authorization: Bearer $TOKEN" "$BASE_URL/locations"
+```
+
+#### Response example
+```
+...
+< HTTP/2 200
+< date: Thu, 23 May 2019 18:35:33 GMT
+< content-type: application/json; charset=utf-8
+< content-length: 20346
+...
+{
+  "locations": [
+    {
+      "id": "ffb25998-3ddb-4c75-1111-6182a1e7e14c",
+      "externalCrmId": "ABC",
+      "externalId": "ABC",
+      "organization": "compologyinc",
+      "customerId": "b83959dd-c54a-40a0-1111-214ea8a9b783",
+      "type": "onsite",
+      "description": "Behind the store",
+      "street": "1045 Bryant St",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94111",
+      "postalCode": "94111",
+      "country": null,
+      "lat": 37.10013153,
+      "lon": -121.950598,
+      "radius": 50,
+      "contactFullName": "",
+      "contactPhone": "",
+      "internationalizedContactPhone": null,
+      "contactEmail": "",
+      "createdAt": "2017-05-01T20:45:08.764Z",
+      "updatedAt": "2017-08-28T16:34:19.108Z",
+      "deactivatedAt": null,
+      "numContainersOnSite": 0
+    },
+...
+  ]
+}
+```
+
 #### GET `/locations/e/<external location id>`
 #### Parameters
 None.
+
+#### Request example
+```
+curl -v -H "Authorization: Bearer $TOKEN" "$BASE_URL/locations/e/ABC"
+```
+
+#### Response example
+```
+...
+< HTTP/2 200
+< date: Thu, 23 May 2019 18:40:56 GMT
+< content-type: application/json; charset=utf-8
+< content-length: 597
+...
+{
+  "id": "b07a708b-cfc0-4003-1111-8651c9dcb443",
+  "externalCrmId": "ABC",
+  "externalId": "ABC",
+  "organization": "compologyinc",
+  "customerId": "54d72b65-d6fb-416d-1111-03a3196506d0",
+  "type": "onsite",
+  "description": "Behind the store",
+  "street": "1045 Bryant St",
+  "city": "San Francisco",
+  "state": "CA",
+  "zip": "94111",
+  "postalCode": "94111",
+  "country": null,
+  "lat": 37.10013153,
+  "lon": -121.950598,
+  "radius": 50,
+  "contactFullName": null,
+  "contactPhone": null,
+  "internationalizedContactPhone": null,
+  "contactEmail": null,
+  "createdAt": "2019-05-23T18:33:49.175Z",
+  "updatedAt": "2019-05-23T18:33:49.175Z",
+  "deactivatedAt": null,
+  "numContainersOnSite": 0
+}
+
+```
 
 #### POST `/locations`
 #### Parameters
