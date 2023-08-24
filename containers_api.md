@@ -11,6 +11,7 @@ Use cases of this API include (but are not limited to):
 
  * Getting a list of containers
  * Getting a list of containers for a specific customer
+ * Updating a list of containers for a specific customer
 
 ## Overview
 
