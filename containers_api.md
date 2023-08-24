@@ -14,7 +14,8 @@ Use cases of this API include (but are not limited to):
 
 ## Overview
 
-## Version 1 (v1) (Base URL: `https://containers-api.compology.com/v1/`)
+## Version 1
+Base URL: `https://containers-api.compology.com/v1/`
 
 ## API Reference
 
@@ -123,7 +124,8 @@ curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" ${BASE}/c
 ]
 ```
 
-** Version 2 (v2) (Base URL: `https://containers-api.compology.com/v2/`)
+** Version 2
+Base URL: `https://containers-api.compology.com/v2/`
 
 #### POST `/bulk_update`
 
