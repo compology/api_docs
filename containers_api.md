@@ -176,6 +176,7 @@ Base URL: `https://containers-api.compology.com/v2/`
   * Will only update containers within the organization provided in the bearer token.
     * Requesting containers that do not exist or containers outside the organization will result in an erorr   
   * Set content-type: 'application/json'
+  * The maximum amount able to be requested at a time is 1,000
 
 
 
