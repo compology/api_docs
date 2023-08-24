@@ -126,6 +126,51 @@ curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" ${BASE}/c
 ]
 ```
 
+#### POST `/bulk_update`
+
+#### Paramaters
+ * `containers` required ( a list of the containers to update)
+  The types for container is as follows. In addition to the dumpsterId it must have
+  at least one field to update and each field must be a valid input for a dumpster 
+  in the user's organization
+ * `dumpsterId` required
+ * `description` optional
+ * `cubicYards` optional
+ * `containerType` optional
+ * `contentType` optional
+
+#### Request Example
+```json
+  {
+   "containers": [
+      {
+         "dumpsterId":"ROADRUNNERRECYCLING_00001",
+         "description":"TEST",
+         "cubicYards":42,
+         "containerType":"roll off",
+         "contentType":"recycle"
+      }
+   ]
+  }
+```
+
+#### Response Example
+```json
+{
+    "params": {
+        "containers": [
+            {
+                "dumpsterId": "ROADRUNNERRECYCLING_00001",
+                "description": "TEST",
+                "cubicYards": 42,
+                "containerType": "roll off",
+                "contentType": "recycle"
+            }
+        ]
+    }
+}
+```
+
 ## Authentication
 API access will be supported only via HTTPS.
 
