@@ -124,7 +124,7 @@ curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" ${BASE}/c
 ]
 ```
 
-** Version 2
+## Version 2
 Base URL: `https://containers-api.compology.com/v2/`
 
 #### POST `/bulk_update`
