@@ -1,7 +1,5 @@
 # Compology Containers API
 
-**VERSION 1 (v1) FOR RELEASE**
-
 The Compology API allows you to query data about your containers.
 
 The API is based on REST principles, making it conform to industry-standard
@@ -13,11 +11,12 @@ Use cases of this API include (but are not limited to):
 
  * Getting a list of containers
  * Getting a list of containers for a specific customer
+ * Updating a list of containers for a specific customer
 
 ## Overview
 
+## Version 1
 Base URL: `https://containers-api.compology.com/v1/`
-
 
 ## API Reference
 
@@ -125,6 +124,61 @@ curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" ${BASE}/c
   ...
 ]
 ```
+
+## Version 2
+Base URL: `https://containers-api.compology.com/v2/`
+
+#### POST `/bulk_update`
+
+  #### Paramaters
+   * `containers` required ( a list of the containers to update)
+    The types for container is as follows. In addition to the dumpsterId it must have
+    at least one field to update and each field must be a valid input for a dumpster 
+    in the user's organization
+   * `dumpsterId` required
+   * `description` optional
+   * `cubicYards` optional
+   * `containerType` optional
+   * `contentType` optional
+  
+  #### Request Example
+  ```json
+    {
+     "containers": [
+        {
+           "dumpsterId":"ROADRUNNERRECYCLING_00001",
+           "description":"TEST",
+           "cubicYards":42,
+           "containerType":"roll off",
+           "contentType":"recycle"
+        }
+     ]
+    }
+  ```
+  
+  #### Response Example
+  ```json
+  {
+      "params": {
+          "containers": [
+              {
+                  "dumpsterId": "ROADRUNNERRECYCLING_00001",
+                  "description": "TEST",
+                  "cubicYards": 42,
+                  "containerType": "roll off",
+                  "contentType": "recycle"
+              }
+          ]
+      }
+  }
+  ```
+  #### Notes
+  * Will only update containers within the organization provided in the bearer token.
+    * Requesting containers that do not exist or containers outside the organization will result in an erorr   
+  * Set content-type: 'application/json'
+  * The maximum amount able to be requested at a time is 1,000
+
+
 
 ## Authentication
 API access will be supported only via HTTPS.
