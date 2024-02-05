@@ -31,25 +31,25 @@ Successful responses will always have a Content-Type of text/csv; charset=utf-8.
 
 #### Response fields
 
-| Name | Type | Description | Example |
-|------|------|-------------|---------|
-| organization_id         | string | Your organization’s identifier. This will match the organization_id value specified in the request. | compologyinc |
+| Name | Type      | Description | Example |
+|------|-----------|-------------|---------|
+| organization_id         | string    | Your organization’s identifier. This will match the organization_id value specified in the request. | compologyinc |
 | occurred_at             | timestamp | The ISO-8601 timestamp of when this event occurred and data was captured. | 2017-11-01T01:58:59.615Z |
-| customer_id             | string | If the container was assigned to a customer when this event occurred, the unique identifier for the customer (typically an internal reference or billing id). | 30003 |
-| customer_name           | string | If the container was assigned to a customer when this event occurred, the name of the customer. | Blue Bottle Coffee |
-| service_location_id     | string | If the container was assigned to a service location when this event occurred, the unique identifier for the service location (typically an internal reference or billing id). | 461 |
-| service_location_name   | string | If the container was assigned to a service location when this event occurred, the name of the service location. | Ferry Building |
-| container_id            | string | The unique Compology identifier for the container. This identifier uniquely identifies the physical box. | AA4M1L41R9TD |
-| container_name          | string | The current name of the container (typically painted on the container). While duplicates are rare, this is not guaranteed to be unique. | 3-5201 |
-| container_content_type  | string | The designated content type of the container. | refuse |
-| container_cubic_yards   | integer | The branded size of the container, in cubic yards. | 3 |
-| level                   | integer | If present, the level of content within the container at this event as a percentage, inclusive, between 0 and 100. This value may update for recent events as Compology has more time to classify data but should be relatively static 6 hours after the occurred_at timestamp. | 35 |
-| was_emptied             | boolean | If present, indicates whether the container was emptied prior to this event. This field is only supported for front-load containers. This value may update for recent events as Compology has more time to classify data but should be relatively static 12 hours after the occurred_at timestamp. | t |
+| customer_id             | string    | If the container was assigned to a customer when this event occurred, the unique identifier for the customer (typically an internal reference or billing id). | 30003 |
+| customer_name           | string    | If the container was assigned to a customer when this event occurred, the name of the customer. | Blue Bottle Coffee |
+| service_location_id     | string    | If the container was assigned to a service location when this event occurred, the unique identifier for the service location (typically an internal reference or billing id). | 461 |
+| service_location_name   | string    | If the container was assigned to a service location when this event occurred, the name of the service location. | Ferry Building |
+| container_id            | string    | The unique Compology identifier for the container. This identifier uniquely identifies the physical box. | AA4M1L41R9TD |
+| container_name          | string    | The current name of the container (typically painted on the container). While duplicates are rare, this is not guaranteed to be unique. | 3-5201 |
+| container_content_type  | string    | The designated content type of the container. | refuse |
+| container_cubic_yards   | string    | The branded size of the container, in cubic yards. | 3 |
+| level                   | integer   | If present, the level of content within the container at this event as a percentage, inclusive, between 0 and 100. This value may update for recent events as Compology has more time to classify data but should be relatively static 6 hours after the occurred_at timestamp. | 35 |
+| was_emptied             | boolean   | If present, indicates whether the container was emptied prior to this event. This field is only supported for front-load containers. This value may update for recent events as Compology has more time to classify data but should be relatively static 12 hours after the occurred_at timestamp. | t |
 | empty_occurred_at       | timestamp | If present (when was_emptied is t), the ISO-8601 timestamp representing Compology’s best guess at when the bin was emptied. This value may update for recent events as Compology has more time to classify data but should be relatively static 12 hours after the occurred_at timestamp. | 2017-11-01T01:31:42.982Z |
-| latitude                | float | If present, the latitude of the container at this event in decimal degrees. | 37.771777 |
-| longitude               | float | If present, the longitude of the container at this event in decimal degrees. | -122.407368 |
-| position_accuracy       | float | If present, the expected margin of error of the latitude/longitude values in meters. | 9.3 |
-| image_url               | string | If present, the url of the image taken at this event. | https://images.compology.com/1/raw_device_data/3a22fd3f-e793-4cf7-bcf9-be8e789d8a8b |
+| latitude                | float     | If present, the latitude of the container at this event in decimal degrees. | 37.771777 |
+| longitude               | float     | If present, the longitude of the container at this event in decimal degrees. | -122.407368 |
+| position_accuracy       | float     | If present, the expected margin of error of the latitude/longitude values in meters. | 9.3 |
+| image_url               | string    | If present, the url of the image taken at this event. | https://images.compology.com/1/raw_device_data/3a22fd3f-e793-4cf7-bcf9-be8e789d8a8b |
 
 
 #### Example

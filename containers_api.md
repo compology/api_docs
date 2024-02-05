@@ -43,7 +43,7 @@ curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" ${BASE}/c
     "id":"COMPOLOGYINC_04",
     "containerType":"roll off",
     "contentType":"refuse",
-    "cubicYards":20,
+    "cubicYards":"20.00",
     "description":"20-02",
     "externalId":"1ST4P4WFx6",
     "hasAccuratePosition":true,
@@ -94,7 +94,7 @@ curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" ${BASE}/c
     "id":"COMPOLOGYINC_04",
     "containerType":"roll off",
     "contentType":"refuse",
-    "cubicYards":20,
+    "cubicYards":"1.50",
     "description":"20-02",
     "externalId":"1ST4P4WFJNA6",
     "hasAccuratePosition":true,
@@ -148,7 +148,7 @@ Base URL: `https://containers-api.compology.com/v2/`
         {
            "dumpsterId":"ROADRUNNERRECYCLING_00001",
            "description":"TEST",
-           "cubicYards":42,
+           "cubicYards":"42.00",
            "containerType":"roll off",
            "contentType":"recycle"
         }
@@ -164,7 +164,7 @@ Base URL: `https://containers-api.compology.com/v2/`
               {
                   "dumpsterId": "ROADRUNNERRECYCLING_00001",
                   "description": "TEST",
-                  "cubicYards": 42,
+                  "cubicYards": "42.00",
                   "containerType": "roll off",
                   "contentType": "recycle"
               }
